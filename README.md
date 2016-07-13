@@ -1,3 +1,4 @@
+angular-routes
 
 This is a very simple demo web application designed as a starting point
 interviews, training or just experimenting. This demo application uses:
