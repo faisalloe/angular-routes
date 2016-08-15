@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+
 import {AjaxRequestService} from './ajax.req.service';
 
 @Component({
@@ -9,7 +10,6 @@ import {AjaxRequestService} from './ajax.req.service';
         AjaxRequestService,
     ]
 })
-
 
 export class IncComponent {
 

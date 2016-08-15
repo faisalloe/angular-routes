@@ -1,36 +1,59 @@
-import { provideRouter, RouterConfig }  from '@angular/router';
+import {Routes, RouterModule } from '@angular/router';
 
+
+import {LandingComponent} from './landing.component';
 import {HelloComponent} from './hello.component';
-import {DashboardComponent} from './dashboard.component';
-import {IncComponent} from './inc.component';
-import {AdditionComponent} from './addition.component';
-import {RomanComponent} from './roman.component';
+
+const routes: Routes= getScreens();
+
+export const routing = RouterModule.forRoot(routes);
+
+function getScreens(){
+    var results :Array<Object> = Array<Object>();
+    results.push(
+        {
+            path: '',
+            component: LandingComponent
+        }
+    );
+
+    results.push({
+            path: 'hello',
+            component: HelloComponent
+    });
+
+    results.push({
+            path: '',
+            redirectTo: '/hello',
+            pathMatch: 'full'
+        }
+    );
+
+    results.push(
+        {
+            path: 'increment',
+            loadChildren: 'app/inc.module'
+        }
+
+    );
+
+    results.push(
+        {
+            path: 'adder',
+            loadChildren: 'app/add.module'
+        }
+
+    );
+
+    results.push(
+        {
+            path: 'roman',
+            loadChildren: 'app/roman.module'
+        }
+        
+    );
 
 
-const routes: RouterConfig = [
-    {
-        path: '',
-        component: DashboardComponent
-    },
-    {
-        path: 'hello',
-        component: HelloComponent
-    },{
-        path: 'increment',
-        component: IncComponent
-    },{
-        path: 'adder',
-        component: AdditionComponent
-    },{
-        path: 'roman',
-        component: RomanComponent
-    }
 
-];
-
-export const appRouterProviders = [
-    provideRouter(routes)
-];
-
-
-
+    return results;
+}

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { ROUTER_DIRECTIVES } from '@angular/router';
-
+import { ROUTER_DIRECTIVES} from '@angular/router';
 import {AjaxRequestService} from './ajax.req.service';
 
 @Component({
@@ -11,7 +10,6 @@ import {AjaxRequestService} from './ajax.req.service';
     ],
     directives: [ROUTER_DIRECTIVES]
 })
-
 
 export class AppComponent {
 
